@@ -1,0 +1,11 @@
+<h1 class="mb-7 flex w-screen text-5xl font-black justify-center">
+  Articles
+</h1>
+
+<div class="w-screen">
+  <ul class="w-full">
+    <% @articles.each do |article| %>
+      <li class="text-2xl italic flex w-full justify-center"><%= article.title %></li>
+    <% end %>
+  </ul>
+</div>
