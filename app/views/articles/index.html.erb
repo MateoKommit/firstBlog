@@ -5,7 +5,12 @@
 <div class="w-screen">
   <ul class="w-full">
     <% @articles.each do |article| %>
-      <li class="text-2xl italic flex w-full justify-center"><%= article.title %></li>
+      <li>
+        <a class="text-2xl italic flex w-full justify-center" 
+        href="/articles/<%= article.id %>">
+          <%= article.title %>
+        </a>
+      </li>
     <% end %>
   </ul>
 </div>
