@@ -3,7 +3,7 @@
     <%= @article.title %>
   </h1>
 
-  <p class="text-2xl italic flex w-full justify-center">
+  <p class="text-2xl italic flex w-full justify-center mb-16">
     <%= @article.body %>
   </p>
 
@@ -15,4 +15,10 @@
     method: :delete,
     data: { confirm: "Are you sure you want to delete this article?" } %>
   </div>
+
+  <h1 class="mb-7 flex w-screen text-2xl font-black justify-center mt-20">
+    Comment
+  </h1>
+
+  <%= render 'components/comment_form' %>
 </div>
