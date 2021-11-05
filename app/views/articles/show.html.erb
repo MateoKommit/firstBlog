@@ -17,6 +17,25 @@
   </div>
 
   <h1 class="mb-7 flex w-screen text-2xl font-black justify-center mt-20">
+    Comments
+  </h1>
+  <% @article.comments.each do |comment| %>
+    <div class="w-3/4 flex flex-wrap">
+      <p class="mx-2">
+        <%= link_to [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } do %>
+          ❌
+        <% end %>
+      </p>
+      <p class="mx-2 font-bold">
+        <%= comment.commenter %>:
+      </p>
+      <p class="mx-2">
+        <%= comment.body %>
+      </p>
+    </div>
+  <% end %>
+
+  <h1 class="mb-7 flex w-screen text-2xl font-black justify-center mt-20">
     Comment
   </h1>
 
