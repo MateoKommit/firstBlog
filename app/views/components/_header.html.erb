@@ -14,7 +14,7 @@
 					<!-- Primary Navbar items -->
 					<div class="hidden md:flex items-center space-x-1">
 						<a
-							href="/articles"
+							href="/"
 							class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
 							>Home</a
 						>
@@ -23,21 +23,16 @@
 							class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
 							>Create Article</a
 						>
-						<a
-							href=""
-							class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-							>Feed</a
-						>
-						<a
-							href=""
-							class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-							>Profile</a
-						>
-						<a
-							href=""
-							class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-							>Settings</a
-						>
+						<p class="navbar-text float-right">
+							<% if user_signed_in? %>
+								<p class="py-4 px-2 text-gray-500 font-semibold">Logged in as <%= current_user.email %></p>
+								<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300' %> |
+								<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300'  %>
+							<% else %>
+								<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300'  %> |
+								<%= link_to "Login", new_user_session_path, :class => 'navbar-link py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300'  %>
+							<% end %>
+						</p>
 					</div>
 				</div>
 			</div>
